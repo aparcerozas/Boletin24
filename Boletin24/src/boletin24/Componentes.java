@@ -5,6 +5,8 @@
  */
 package boletin24;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.*;
 
 /**
@@ -40,6 +42,14 @@ public class Componentes {
         text2 = new JTextField();
         boton1 = new JButton("PREMER");
         boton2 = new JButton("LIMPAR");
+        boton2.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                text1.setText("");
+                text2.setText("");
+            }
+            
+        });
         label1.setBounds(50, 50, 100, 30);
         label2.setBounds(50, 100, 150, 30);
         text1.setBounds(200, 50, 150, 30);
@@ -59,9 +69,21 @@ public class Componentes {
     public JPanel crearPanel2(){
         panel2 = new JPanel();
         panel2.setSize(400, 300);
-        String[] ele = {"ElementoList1","ElementoList2","ElementoList3"};
+        String[] ele = {"DAM 1º","DAM 2º","ASIR 1º", "ASIR 2º"};
         list = new JList(ele);
         boton3 = new JButton("BOTON");
+        boton3.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(list.getSelectedValue()!=null){
+                    String nome = text1.getText();
+                    String curso = (String)list.getSelectedValue();
+                    area.append(nome + " - " + curso);
+                area.append("\n");
+                }
+            }
+            
+        });
         area = new JTextArea();
         list.setBounds(20, 350, 130, 250);
         boton3.setBounds(175, 380, 100, 50);
