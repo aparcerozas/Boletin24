@@ -16,8 +16,10 @@ public class Boletin24 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        Componentes obx = new Componentes();
-        obx.crearMarco();
+//        Componentes obx = new Componentes();
+//        obx.crearMarco();
+        Ventana ven = new Ventana();
+        ven.setVisible(true);
     }
     
 }
