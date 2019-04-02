@@ -171,7 +171,7 @@ public class Ventana extends javax.swing.JFrame {
     }//GEN-LAST:event_bLimparActionPerformed
 
     private void bIntroducirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bIntroducirActionPerformed
-        if(list.getSelectedValue()!=null & text1.getText()!=""){
+        if(list.getSelectedValue()!=null & text1.getText().length()>0){
                 String nome = text1.getText();
                 String curso = (String)list.getSelectedValue();
                 area.append(nome + " - " + curso);
